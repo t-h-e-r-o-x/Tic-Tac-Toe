@@ -16,6 +16,7 @@ const cells=document.querySelectorAll('.cell');
 startGame();
 
 function startGame(){
+  document.getElementById('clue').innerText = 'You can start the game by clicking on any square';
   document.querySelector('.endgame').style.display = "none";
   origBoard = Array.from(Array(9).keys());
   for(let i=0; i<cells.length; i++){
@@ -26,6 +27,7 @@ function startGame(){
 }
 
 function turnClick(square) {
+  document.getElementById('clue').innerText = '';
   if(typeof origBoard[square.target.id] == 'number'){ //checking if clicked on empty square
   turn(square.target.id, huPlayer);
   if(!checkTie())
@@ -57,7 +59,7 @@ return gameWon;
 function gameOver (gameWon) {
   for (let index of winCombos[gameWon.index]){
     document.getElementById(index).style.backgroundColor =
-    gameWon.player == huPlayer ? "green" : "red";
+    gameWon.player == huPlayer ? "rgba(25, 111, 61, 0.4)" : "rgba(231, 76, 60, 0.6)";
   }
   for (var i=0; i < cells.length; i++){
     cells[i].removeEventListener('click', turnClick, false);
@@ -81,7 +83,7 @@ function bestSpot() {
 function checkTie() {
   if(emptySquares().length == 0){
     for (var i=0; i<cells.length; i++){
-      cells[i].style.backgroundColor = "blue";
+      cells[i].style.backgroundColor = "#17202A";
       cells[i].removeEventListener('click', turnClick, false);
     }
     declareWinner("Tie Game!");

@@ -10,6 +10,12 @@
 </head>
 
 <body>
+  <div class = "info">
+  <h1>Welcome to The Tic-Tac-Toe</h1>
+  <h3>Do you think you can beat the A.I ?.....Try your luck!</h3>
+</div>
+  <p id = "clue">You can start the game by clicking on any square</p>
+<div class = "game">
   <table>
     <tr>
       <td class="cell" id="0"></td>
@@ -27,12 +33,13 @@
       <td class="cell" id="8"></td>
     </tr>
   </table>
+  <button onClick="startGame()">Restart</button>
+</div>
   <div class="endgame">
     <div class="text">
 
     </div>
   </div>
-  <button onClick="startGame()">Restart</button>
  <script src = "script.js"></script>
 </body>
 </html>

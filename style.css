@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Orbitron|Quicksand|Sarabun');
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Monoton|Press+Start+2P');
+
+body {
+  background-color: black;
+}
+
+.info{
+  text-align: center;
+  color:#B2BABB;
+  font-family:'Orbitron', sans-serif;
+}
+h3{
+  font-size:1.2em;
+}
+
+p{
+  text-align: center;
+  font-family:'Orbitron', sans-serif;
+  color:orange;
+}
+
 td{
   border: 2px solid #333;
   height: 100px;
@@ -5,6 +27,7 @@ td{
   text-align: center;
   vertical-align: middle;
   font-family: "Comic Sans MS",cursive;
+  color: white;
   font-size: 70px;
   cursor: pointer;
 }
@@ -14,7 +37,9 @@ table{
   position: absolute;
   left: 50%;
   margin-left: -155px;
-  top: 50px;
+  top: 150px;
+  margin-top:15px;
+  margin-bottom: 45px;
 }
 
 table tr:first-child td{
@@ -35,18 +60,40 @@ table tr td:last-child{
 
 .endgame{
   display: none;
-  width: 200px;
-  top: 120px;
-  background-color: rgba(205,133,63,0.8);
+  width: 300px;
+  height: 160px;
+  background-color: rgba(186, 74, 0,0.9);
   position: absolute;
   left:50%;
-  margin-left: -100px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  top:35%;
+  margin-left: -150px;
+  margin-top: -41px;
+  padding-top: 100px;
+  padding-bottom: 08px;
   text-align: center;
   border-radius: 5px;
-  color: white;
+  color: black;
+  font-weight:bold;
   font-size: 2em;
+  font-family: "Monoton",sans-serif;
+}
 
+button {
+  font-family: 'Quicksand',sans-serif;
+  position: absolute;
+  background: none;
+  border:1.5px solid orange;
+  color:orange;
+  font-size: 2em;
+  text-align: center;
+  top: 81%;
+  left: 45.7%;
+  transition:0.3s;
+}
 
+button:hover{
+  background-color: orange;
+  color:black;
+  cursor: pointer;
+  border-color:#873600;
 }
