@@ -18,10 +18,10 @@ startGame();
 function startGame(){
   document.getElementById('clue').innerText = 'You can start the game by clicking on any square';
   document.querySelector('.endgame').style.display = "none";
-  origBoard = Array.from(Array(9).keys());
+  origBoard = Array.from(Array(9).keys()); //a board used for our reference
   for(let i=0; i<cells.length; i++){
     cells[i].innerText = '';
-    cells[i].style.removeProperty('background-color');
+    cells[i].style.removeProperty('background-color'); //removing earlier filled colour when gamaOver
     cells[i].addEventListener('click', turnClick, false);
   }
 }
@@ -48,7 +48,7 @@ function checkWin(board, player){
 (e === player)? a.concat(i) : a, []);
 let gameWon = null;
 for( let [index, win] of winCombos.entries()){
-  if(win.every(elem => plays.indexOf(elem) > -1)){
+  if(win.every(elem => plays.indexOf(elem) > -1)){ //checking if all the entries required for winning have been occupied by that player
     gameWon = {index: index, player: player};
     break;
   }
@@ -58,7 +58,7 @@ return gameWon;
 
 function gameOver (gameWon) {
   for (let index of winCombos[gameWon.index]){
-    document.getElementById(index).style.backgroundColor =
+    document.getElementById(index).style.backgroundColor = //changing the colour of that cell according to who won
     gameWon.player == huPlayer ? "rgba(25, 111, 61, 0.4)" : "rgba(231, 76, 60, 0.6)";
   }
   for (var i=0; i < cells.length; i++){
